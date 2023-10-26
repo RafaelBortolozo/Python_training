@@ -86,5 +86,31 @@ print(State(1)) #State.ACTIVE
 print(State(1).value) #1
 
 #*****************************#
+
+Listas podem conter variados formatos de dados, como acontece no JS 
+
+.append (adiciona no final da lista)
+.extend ou += (concatena listas)
+.remove (Remove néh)
+.pop (retorna e remove ultimo elemento)
+.insert (insere elemento em posição especifica)
+.sort (ordena lista)
+
+#*****************************#
+
+Tuplas = é uma lista, mas usa () ao invés de []
+
+#*****************************#
+
+dict
+
+.keys (lista todas as chaves)
+.values (lista todos os valores)
+del dict['key'] (deleta chave)
+.copy (cria uma cópia do dict)
+
+#*****************************#
+#*****************************#
+#*****************************#
 #*****************************#
 #*****************************#
