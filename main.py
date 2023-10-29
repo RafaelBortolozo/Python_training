@@ -102,13 +102,75 @@ Tuplas = é uma lista, mas usa () ao invés de []
 
 #*****************************#
 
-dict
+dictionaries
 
+.get("color", "brown") # tenta pegar valor do indice, caso contrário retorne "brown"
 .keys (lista todas as chaves)
 .values (lista todos os valores)
 del dict['key'] (deleta chave)
 .copy (cria uma cópia do dict)
 
+#*****************************#
+
+Sets
+
+Uma lista desordenada escrita entre {} que não contem elementos duplicados
+Parcialmente imutável
+Geralmente utilizado com operações matematicas como união, 
+interseção e diferença simetrica
+
+set1 = {"Roger", "sid"}
+set2 = {"Roger"}
+
+set1 & set2 # interseção {'Roger'}
+set1 | set2 # união {'Roger', 'sid'}
+set1 - set2 # diferença {'sid'}
+
+#*****************************#
+
+Dictionaries passados como parametro em funções
+podem ter seus valores alterados em outro escopo,
+pois neste caso é passado o endereço do objeto e
+não criado uma cópia do objeto, que nem as variaveis
+comuns
+
+#*****************************#
+
+variavel global e local
+
+Em um caso hipotético, temos uma função e duas variaveis denominadas X
+Uma dentro da função (local) e outra fora da função (global)
+
+Dentro da função, se declarar uma variavel com prefixo "global", 
+significa que queremos o valor que está fora de funções e classes (global)
+
+Se declarar como "nonlocal", então queremos a variável do escopo acima
+
+Pra isso funcionar, as variaveis devem ter o mesmo nome
+
+x = 1
+def funcao():
+    x = 2
+    def bar():
+        global x  # 1
+
+    def baz():
+        nonlocal x # 2
+
+#*****************************#
+
+loops
+
+while condition:
+
+for item in [1, 2, 3, 4]:
+for index, item in enumerate(list)
+
+#*****************************#
+
+
+
+#*****************************#
 #*****************************#
 #*****************************#
 #*****************************#
