@@ -166,13 +166,136 @@ while condition:
 for item in [1, 2, 3, 4]:
 for index, item in enumerate(list)
 
+continue: usado para avançar para a próxima iteração
+semelhante ao break, porém finalizando somente a iteração atual.
+
 #*****************************#
 
+Classes
+class Animal:
+    def walk(self):
+        print("walking...")
 
+class Dog(Animal): # extends Animal
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def bark(self):
+        print("woof!")
+
+roger = Dog("Roger", 8)
+roger.name
+roger.bark()
+roger.walk()
 
 #*****************************#
+
+Modules
+
+Podemos importar funções nativas ou de outros arquivos
+Eles são interpretados como classes
+
+import dog
+dog.bark()
+
+Se quiser importar a função bark() diretamente -> from dog import bark
+
+Para navegar entre pastas, basta usar "."
+
 #*****************************#
+
+Argumentos no terminal
+
+Podemos passar valores no terminal ao rodar a aplicação
+Pra visualizar os dados, usamos o modulo "sys"
+e sys.argv, que retorna uma lista
+
+python main.py beau 39
+['main.py', 'beau', '39']
+
+Podemos usar tbm argparse.ArgumentParser() que possui mais funcionalidades
+
 #*****************************#
+
+Lambda functions
+
+São funções simplificadas e sem nome, como um arrow function do JS
+
+multiply = lambda a, b : a * b
+multiply(2, 4)
+
+Versão JS
+(a, b) => {
+    return a * b
+}
+
 #*****************************#
+map, filter, reduce
+
+map: executa uma função para cada item
+map(function, list)
+
+filter: retorna somente os elementos que batem com a condicional
+filter(function with bool return, list)
+
+reduce: É um acumulador. Para cada item, é executado uma função com dois argumentos
+O primeiro é a variavel acumuladora, a segunda é um item da lista
+
+expenses = [
+    ('Dinner', 80),
+    ('Car repair', 120)
+]
+
+sum = reduce(lambda acum, item: acum[1] + item[1], expenses)
+
 #*****************************#
+
+decorator
+
+Decorador é uma função que recebe uma função como parametro e retorna uma função
+
+def decorator(func):
+    print("Before")
+    func()
+    print("after")
+
+@decorator 
+def hello():
+    print("Hello")
+
+# Before, Hello, after
+
+Toda vez que a função Hello() for chamada, será executada 
+a função decorator(), que recebe como parametro a função Hello()
+
+O código da função hello() será executada dentro do decorator 
+
+#*****************************#
+
+exceptions
+
+try: # Tenta executar o código
+except <ErrorType>: # Executa se tal erro aconteceu
+else: # Se um outro erro qualquer aparecer...
+finally: # executa no final, independente se deu certo ou errado
+
+raise Exception('an error')
+
+#*****************************#
+
+Em vez de usar map, podemos simplificar alguns casos
+
+numbers = [1, 2, 3]
+a = [n*2 for n in numbers] # 2, 4, 6
+
+#*****************************#
+
+Ao construir classes, podemos sobreescrever alguns operadores
+__gt__ permite executar uma operação lógica, permitindo usar
+operadores lógicos para comparar objetos, por exemplo:
+
+def __gt__ (self, other):
+    return True if self.age > other.age else False
+
 #*****************************#
